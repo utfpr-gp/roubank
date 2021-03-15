@@ -1,5 +1,5 @@
 # Vídeos
-- 00 - Apresentação do Rounbank - https://www.loom.com/share/0986b4edcf814e2595183ef787a3074d?sharedAppSource=personal_library
+- 00 - Apresentação do Roubank - https://www.loom.com/share/0986b4edcf814e2595183ef787a3074d?sharedAppSource=personal_library
 - 01 - Definição do repositório no GitHub e clonagem - https://www.loom.com/share/5de9a8a7cfbc4b788407074915b54d44?sharedAppSource=personal_library
 
 # GitHub Pages
