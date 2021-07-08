@@ -1,0 +1,24 @@
+{
+  "name": "roubank",
+  "version": "1.0.0",
+  "description": "- 00 - Apresentação do Roubank - https://www.loom.com/share/0986b4edcf814e2595183ef787a3074d?sharedAppSource=personal_library\r - 01 - Definição do repositório no GitHub e clonagem - https://www.loom.com/share/5de9a8a7cfbc4b788407074915b54d44?sharedAppSource=personal_library\r - 02 - Wireframes no draw.io e GitHub - https://www.loom.com/share/481cb8c6f3864114962318dece14eec7?sharedAppSource=personal_library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/utfpr-gp/roubank.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/utfpr-gp/roubank/issues"
+  },
+  "homepage": "https://github.com/utfpr-gp/roubank#readme",
+  "dependencies": {
+    "jquery": "latest",
+    "jquery-mask-plugin": "^1.14.16",
+    "materialize-css": "^1.0.0"
+  }
+}

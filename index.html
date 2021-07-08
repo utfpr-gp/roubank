@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Página Inicial</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link
+      rel="stylesheet"
+      href="http://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="node_modules/materialize-css/dist/css/materialize.css"
+    />
+    <link rel="stylesheet" href="assets/resources/styles/style.css" />
+  </head>
+
+  <body onload="">
+    <!-- menu -->
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper amber accent-4">
+          <div class="container">
+            <a class="brand-logo" href="index.html">
+              <img class="my-logo" src="./assets/resources/images/logo.png" />
+            </a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+              ><i class="material-icons">menu</i></a
+            >
+            <ul class="right hide-on-med-and-down">
+              <li><a href="saque.html" class="flow-text">Saque</a></li>
+              <li><a href="deposito.html" class="flow-text">Depósito</a></li>
+              <li><a href="saldo.html" class="flow-text">Saldo</a></li>
+              <li><a href="extrato.html" class="flow-text">Extrato</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <ul class="sidenav amber" id="mobile-demo">
+      <div class="row">
+        <div class="col s8 offset-s2">
+          <div class="center">
+            <img
+              class="circle responsive-img"
+              src="./assets/resources/images/logo.png"
+            />
+          </div>
+        </div>
+      </div>
+      <li><a href="saque.html" class="flow-text">Saque</a></li>
+      <li><a href="deposito.html" class="flow-text">Depósito</a></li>
+      <li><a href="saldo.html" class="flow-text">Saldo</a></li>
+      <li><a href="extrato.html" class="flow-text">Extrato</a></li>
+    </ul>
+    <!-- fim menu -->
+    <!-- intro -->
+    <div class="intro amber z-depth-1 my-logo-text">
+      <h1 class="grey-text text-lighten-5">ROUBANK</h1>
+      <h4 class="amber-text text-darken-1">Mais tarifas para você!!!</h4>
+    </div>
+    <!-- intro -->
+
+    <!-- container -->
+    <div class="container about">
+      <!-- painel serviços -->
+      <div id="painel-servicos" style="display: none">
+        <h5>Serviços</h5>
+        <hr />
+        <div class="row">
+          <!-- serviços -->
+          <div class="col s12 m6">
+            <a href="saque.html">
+              <div class="card-panel amber accent-4 center my-card-button">
+                <span class="white-text flow-text"> SAQUE </span>
+              </div>
+            </a>
+          </div>
+          <div class="col s12 m6">
+            <a href="deposito.html">
+              <div class="card-panel amber accent-4 center my-card-button">
+                <span class="white-text flow-text"> DEPÓSITO </span>
+              </div>
+            </a>
+          </div>
+          <div class="col s12 m6">
+            <a href="saldo.html">
+              <div class="card-panel amber accent-4 center my-card-button">
+                <span class="white-text flow-text"> SALDO </span>
+              </div>
+            </a>
+          </div>
+          <div class="col s12 m6">
+            <a href="extrato.html">
+              <div class="card-panel amber accent-4 center my-card-button">
+                <span class="white-text flow-text"> EXTRATO </span>
+              </div>
+            </a>
+          </div>
+          <!-- serviços -->
+        </div>
+        <!-- fim linha -->
+      </div>
+      <!-- fim painel serviços -->
+
+      <!-- paine login -->
+      <div id="painel-login" class="row">
+        <div class="col s12 m6 offset-m3">
+          <a href="login.html">
+            <div
+              id="botao-login"
+              class="card-panel amber accent-4 center my-card-button"
+            >
+              <span class="white-text flow-text"> LOGIN </span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- fim painel login -->
+
+      <!-- saque -->
+      <div class="row">
+        <div class="col s12">
+          <div id="painel-saque"></div>
+        </div>
+      </div>
+      <!-- saque -->
+    </div>
+    <!-- fim container -->
+
+    <!-- rodape-->
+    <footer class="page-footer amber accent-4">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 center">
+            <img
+              src="assets/resources/images/logo.png"
+              id="logo-footer"
+              class="img-responsive"
+              height="120em"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          &copy; Copyright - Todos os direitos reservados
+        </div>
+      </div>
+    </footer>
+    <!-- rodapé -->
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="assets/libraries/jquery/jquery.mask.js"></script>
+    <script src="node_modules/materialize-css/dist/js/materialize.js"></script>
+    <script src="assets/resources/scripts/index.js"></script>
+  </body>
+</html>
