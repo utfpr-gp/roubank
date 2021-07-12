@@ -1,11 +1,14 @@
 # GitHub Pages
 
+<https://utfpr-gp.github.io/roubank/>
+
 # Checkist
+
 Caixas de Diálogo
 
 - [x] prompt
-- [ ] alert
-- [ ] confirm
+- [x] alert
+- [x] confirm
 
 Temporizadores
 
@@ -30,7 +33,7 @@ Eventos
 - [ ] Evento de teclado - usar charCode ou keyCode
 - [ ] Eventos de formulário - onfocus e onblur
 - [ ] Imprimir alguma propriedade do objeto event recebido como parâmetro
-- [ ] Propagação de eventos no modelo bolha (usar target e currentTarget, ou seja, disparar o evento em um elemento filho e capturar em um elemento pai) 
+- [ ] Propagação de eventos no modelo bolha (usar target e currentTarget, ou seja, disparar o evento em um elemento filho e capturar em um elemento pai)
 
 Acesso aos elementos DOM do HTML
 
@@ -100,4 +103,5 @@ Web Storage
 - [ ] Leitura e escrita de JSON
 
 Ajax com Backend
+
 - [ ] Implementação funcional (basta fazer funcionar uma requisição) do backend em ExpressJS na plataforma Node e requisições AJAX.
