@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Página Inicial</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="favicon.png" />
+
+	<!--Import Google Icon Font-->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="assets/libraries/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/libraries/materialize/css/materialize.css">
+	<link rel="stylesheet" href="assets/resources/styles/style.css">
+</head>
+
+<body>
+	<!-- menu -->
+	<header>
+		<div class="navbar-fixed">
+			<nav>
+				<div class="nav-wrapper amber accent-4">
+					<div class="container">
+						<a class="brand-logo" href="index.html">
+							<img class="my-logo" src="./assets/resources/images/logo.png">
+						</a>
+						<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+						<ul class="right hide-on-med-and-down">
+							<li><a href="contato.html" class="flow-text">Contato</a></li>
+							<li><a href="login.html" class="flow-text">Login</a></li>
+						</ul>
+						<ul class="side-nav amber" id="mobile-demo">
+							<div class="row">
+								<div class="col s8 offset-s2">
+									<div class="center">
+										<img class="circle responsive-img" src="./assets/resources/images/logo.png">
+									</div>
+								</div>
+							</div>
+							<li><a href="login.html">Login</a></li>
+							<li><a href="contato.html">Contato</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+	<!-- fim menu -->
+	<main>
+		<div class="container contact">
+			<h5>contato</h5>
+			<h6>Entre em contato conosco</h6>
+			<hr>
+			<div class="row">
+				<div class="col s12">
+					<div class="input-field col s12">
+						<input id="nome-contato" type="text" class="validate">
+						<label for="nome-contato">Nome</label>
+					</div>
+					<div class="input-field col s12">
+						<input id="sobrenome-contato" type="text" class="validate">
+						<label for="sobrenome-contato">Sobrenome</label>
+					</div>
+					<div class="input-field col s12">
+						<input id="email-contato" type="email" class="validate">
+						<label for="email-contato">Email</label>
+					</div>
+					<textarea class="materialize-textarea" placeholder="Sua mensagem" required></textarea>
+					<button id="botao-enviar-contato" class="btn waves-effect waves-light amber darken-4" type="submit" name="action">Enviar
+						<i class="material-icons right">send</i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!-- rodape-->
+	<footer class="page-footer amber accent-4">
+		<div class="container">
+			<div class="row">
+				<div class="col s12 center">
+					<img src="assets/resources/images/logo.png" id="logo-footer" class=" img-responsive" height="120em">
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				&copy; Copyright - Todos os direitos reservados
+			</div>
+		</div>
+	</footer>
+	<!-- rodapé -->
+	<script src="assets/libraries/jquery/jquery-2.2.4.min.js"></script>
+	<script src="assets/libraries/jquery/jquery.mask.js"></script>
+	<script src="assets/libraries/materialize/js/materialize.js"></script>
+	<script src="assets/resources/scripts/common.js"></script>
+</body>
+
+</html>

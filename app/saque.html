@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Página Inicial</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="favicon.png" />
+
+	<!--Import Google Icon Font-->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="assets/libraries/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/libraries/materialize/css/materialize.css">
+	<link rel="stylesheet" href="assets/resources/styles/style.css">
+</head>
+
+<body>
+	<!-- menu -->
+	<header>
+		<div class="navbar-fixed">
+			<nav>
+				<div class="nav-wrapper amber accent-4">
+					<div class="container">
+						<a class="brand-logo" href="index.html">
+							<img class="my-logo" src="./assets/resources/images/logo.png">
+						</a>
+						<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+						<ul class="right hide-on-med-and-down">
+							<li><a href="saque.html" class="flow-text">Saque</a></li>
+							<li><a href="deposito.html" class="flow-text">Depósito</a></li>
+							<li><a href="saldo.html" class="flow-text">Saldo</a></li>
+							<li><a href="extrato.html" class="flow-text">Extrato</a></li>
+						</ul>
+						<ul class="side-nav amber" id="mobile-demo">
+							<div class="row">
+								<div class="col s8 offset-s2">
+									<div class="center">
+										<img class="circle responsive-img" src="./assets/resources/images/logo.png">
+									</div>
+								</div>
+							</div>
+							<li><a href="saque.html" class="flow-text">Saque</a></li>
+							<li><a href="deposito.html" class="flow-text">Depósito</a></li>
+							<li><a href="saldo.html" class="flow-text">Saldo</a></li>
+							<li><a href="extrato.html" class="flow-text">Extrato</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!-- fim menu -->
+
+	<!-- formulario -->
+	<main>
+		<div class="container contact">
+			<h5>Saque</h5>
+			<h6>Cobramos uma taxa de 2% sobre o valor do saque</h6>
+			<hr>
+			<div class="row">
+				<div class="col s12">
+					<div id="msg-saque" class="card-panel red white-text" style="display: none">
+
+					</div>
+				</div>
+				<form class="col s12" onsubmit="return sacar()">
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="campo-saque" type="text" class="validate money">
+							<label for="campo-saque">Valor de Saque</label>
+						</div>
+					</div>
+					<button class="btn waves-effect waves-light amber darken-4" type="submit" name="action" id="botao-enviar-saque">Saque
+						<i class="material-icons right">send</i>
+					</button>
+				</form>
+			</div>
+			<!-- link home -->
+			<div id="painel-login" class="row">
+				<div class="col s12 m6 offset-m3 center">
+					<a href="index.html">						
+						VOLTAR AO MENU PRINCIPAL					
+					</a>
+				</div>
+			</div>
+			<!-- link home -->
+		</div>
+	</main>
+	<!-- fim formulario -->
+
+	<!-- rodape-->
+	<footer class="page-footer amber accent-4">
+		<div class="container">
+			<div class="row">
+				<div class="col s12 center">
+					<img src="assets/resources/images/logo.png" id="logo-footer" class=" img-responsive" height="120em">
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				&copy; Copyright - Todos os direitos reservados
+			</div>
+		</div>
+	</footer>
+	<!-- rodapé -->
+	<script src="assets/libraries/jquery/jquery-2.2.4.min.js"></script>
+	<script src="assets/libraries/jquery/jquery.mask.js"></script>
+	<script src="assets/libraries/materialize/js/materialize.js"></script>
+	<script src="assets/resources/scripts/common.js"></script>
+</body>
+
+</html>

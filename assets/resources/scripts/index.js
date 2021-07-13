@@ -1,4 +1,19 @@
-welcome();
+window.onload = function () {
+  const LIMIT = 10000;
+  document.getElementById("tax-span").innerText = parseInt(
+    Math.random() * LIMIT
+  );
+
+  window.setInterval(function () {
+    let value = document.getElementById("tax-span").innerText;
+    document.getElementById("tax-span").textContent = (
+      parseInt(value) +
+      Math.random() * 100
+    ).toFixed(2);
+  }, 3000);
+};
+
+//welcome();
 
 //diálogos
 function welcome() {
@@ -28,8 +43,6 @@ function welcome() {
 }
 
 (function () {
-  window.onload = function () {};
-
   /* 
   Atribui comportamento aos componentes materialize.	
   O evento DOMContentLoaded dispara sem aguardar o carregamento do CSS e JS, apenas do DOM.

@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/utfpr-gp/roubank#readme",
   "dependencies": {
+    "alertifyjs": "^1.13.1",
     "jquery": "latest",
     "jquery-mask-plugin": "^1.14.16",
     "materialize-css": "^1.0.0"
