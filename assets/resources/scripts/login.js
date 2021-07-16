@@ -1,5 +1,3 @@
-import * as Keys from "/assets/resources/scripts/util.js";
-
 window.onload = function () {
   //trata o login
   document.forms[0].onsubmit = function (e) {
@@ -8,11 +6,11 @@ window.onload = function () {
     const username = document.querySelector("#input-username").value;
     const password = document.querySelector("#input-password").value;
 
-    const user = JSON.parse(localStorage.getItem(Keys.USERNAME_KEY));
+    const user = JSON.parse(localStorage.getItem(USERNAME_KEY));
 
     if (username == user.username && password == user.password) {
-      localStorage.setItem(Keys.LOGGED_IN_KEY, true);
-      window.open("index.html", "_SELF");
+      localStorage.setItem(LOGGED_IN_KEY, true);
+      window.open("/index.html", "_SELF");
     } else {
       if (username.trim().length == 0 || password.trim().length == 0) {
         alertify.error("Os campos são de preenchimento obrigatório!");

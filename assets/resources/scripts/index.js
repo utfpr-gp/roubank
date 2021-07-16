@@ -1,4 +1,6 @@
 window.onload = function () {
+  initializeUsers();
+
   const LIMIT = 10000;
   document.getElementById("tax-span").innerText = parseInt(
     Math.random() * LIMIT
@@ -12,6 +14,35 @@ window.onload = function () {
     ).toFixed(2);
   }, 3000);
 };
+
+/**
+	Cadastra um usuário default para funcionamento do login.
+	Só realiza o cadastro caso o usuário ainda não esteja salvo no WebStorage.
+*/
+function initializeUsers() {
+  if (localStorage.getItem(USERNAME_KEY) != null) {
+    return false;
+  }
+
+  var user = {
+    nome: USERNAME_KEY,
+    senha: "qwerty",
+    saldo: 0,
+    transacoes: [],
+  };
+  localStorage.setItem(USERNAME_KEY, JSON.stringify(user));
+  localStorage.setItem(CUSTOS_KEY, 0);
+  localStorage.setItem(LOGGED_IN_KEY, false);
+}
+
+function showOperations() {
+  var isLoggedIn = localStorage.getItem(LOGGED_IN_KEY);
+
+  if (isLoggedIn == "true") {
+    $("#painel-login").hide();
+    $("#painel-servicos").fadeIn();
+  }
+}
 
 //welcome();
 
@@ -41,14 +72,3 @@ function welcome() {
     );
   }
 }
-
-(function () {
-  /* 
-  Atribui comportamento aos componentes materialize.	
-  O evento DOMContentLoaded dispara sem aguardar o carregamento do CSS e JS, apenas do DOM.
-  */
-  document.addEventListener("DOMContentLoaded", function () {
-    var elems = document.querySelectorAll(".sidenav");
-    M.Sidenav.init(elems, {});
-  });
-})();

@@ -1,3 +1,7 @@
+@import url("http://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("/node_modules/materialize-css/dist/css/materialize.css");
+@import url("/node_modules/alertifyjs/build/css/alertify.css");
+
 body,
 html {
   background-color: #ededed !important;

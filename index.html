@@ -5,161 +5,97 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="favicon.png" />
-    <link
-      rel="stylesheet"
-      href="http://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <link
-      rel="stylesheet"
-      href="node_modules/materialize-css/dist/css/materialize.css"
-    />
-    <link rel="stylesheet" href="assets/resources/styles/style.css" />
+    <link rel="stylesheet" href="/assets/resources/styles/style.css" />
   </head>
 
-  <body onload="">
-    <!-- menu -->
-    <div class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper amber accent-4">
-          <div class="container">
-            <a class="brand-logo" href="index.html">
-              <img class="my-logo" src="./assets/resources/images/logo.png" />
-            </a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"
-              ><i class="material-icons">menu</i></a
-            >
-            <ul class="right hide-on-med-and-down">
-              <li><a href="app/saque.html" class="flow-text">Saque</a></li>
-              <li>
-                <a href="app/deposito.html" class="flow-text">Depósito</a>
-              </li>
-              <li><a href="app/saldo.html" class="flow-text">Saldo</a></li>
-              <li><a href="app/extrato.html" class="flow-text">Extrato</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-    <ul class="sidenav amber" id="mobile-demo">
-      <div class="row">
-        <div class="col s8 offset-s2">
-          <div class="center">
-            <img
-              class="circle responsive-img"
-              src="./assets/resources/images/logo.png"
-            />
-          </div>
-        </div>
+  <body onload="showOperations()">
+    <div id="menu"></div>
+    <!--main -->
+    <main>
+      <!-- intro -->
+      <div class="intro amber z-depth-1 my-logo-text">
+        <h1 class="grey-text text-lighten-5">ROUBANK</h1>
+        <h4 class="amber-text text-darken-1">Mais tarifas para você!!!</h4>
+        <h5 class="amber-text text-darken-1">
+          Só hoje recebemos um total de
+          <span id="tax-span" class="red-text">0</span> Reais em tarifas!
+        </h5>
       </div>
-      <li><a href="app/saque.html" class="flow-text">Saque</a></li>
-      <li><a href="app/deposito.html" class="flow-text">Depósito</a></li>
-      <li><a href="app/saldo.html" class="flow-text">Saldo</a></li>
-      <li><a href="app/extrato.html" class="flow-text">Extrato</a></li>
-    </ul>
-    <!-- fim menu -->
-    <!-- intro -->
-    <div class="intro amber z-depth-1 my-logo-text">
-      <h1 class="grey-text text-lighten-5">ROUBANK</h1>
-      <h4 class="amber-text text-darken-1">Mais tarifas para você!!!</h4>
-      <h5 class="amber-text text-darken-1">
-        Só hoje recebemos um total de
-        <span id="tax-span" class="red-text">0</span> Reais em tarifas!
-      </h5>
-    </div>
-    <!-- intro -->
+      <!-- intro -->
 
-    <!-- container -->
-    <div class="container about">
-      <!-- painel serviços -->
-      <div id="painel-servicos" style="display: none">
-        <h5>Serviços</h5>
-        <hr />
-        <div class="row">
-          <!-- serviços -->
-          <div class="col s12 m6">
-            <a href="#">
-              <div class="card-panel amber accent-4 center my-card-button">
-                <span class="white-text flow-text"> SAQUE </span>
-              </div>
-            </a>
-          </div>
-          <div class="col s12 m6">
-            <a href="#">
-              <div class="card-panel amber accent-4 center my-card-button">
-                <span class="white-text flow-text"> DEPÓSITO </span>
-              </div>
-            </a>
-          </div>
-          <div class="col s12 m6">
-            <a href="#">
-              <div class="card-panel amber accent-4 center my-card-button">
-                <span class="white-text flow-text"> SALDO </span>
-              </div>
-            </a>
-          </div>
-          <div class="col s12 m6">
-            <a href="#">
-              <div class="card-panel amber accent-4 center my-card-button">
-                <span class="white-text flow-text"> EXTRATO </span>
-              </div>
-            </a>
-          </div>
-          <!-- serviços -->
-        </div>
-        <!-- fim linha -->
-      </div>
-      <!-- fim painel serviços -->
-
-      <!-- paine login -->
-      <div id="painel-login" class="row">
-        <div class="col s12 m6 offset-m3">
-          <a href="app/login.html">
-            <div
-              id="botao-login"
-              class="card-panel amber accent-4 center my-card-button"
-            >
-              <span class="white-text flow-text"> LOGIN </span>
+      <!-- container -->
+      <div class="container about">
+        <!-- painel serviços -->
+        <div id="painel-servicos" style="display: none">
+          <h5>Serviços</h5>
+          <hr />
+          <div class="row">
+            <!-- serviços -->
+            <div class="col s12 m6">
+              <a href="#">
+                <div class="card-panel amber accent-4 center my-card-button">
+                  <span class="white-text flow-text"> SAQUE </span>
+                </div>
+              </a>
             </div>
-          </a>
+            <div class="col s12 m6">
+              <a href="#">
+                <div class="card-panel amber accent-4 center my-card-button">
+                  <span class="white-text flow-text"> DEPÓSITO </span>
+                </div>
+              </a>
+            </div>
+            <div class="col s12 m6">
+              <a href="#">
+                <div class="card-panel amber accent-4 center my-card-button">
+                  <span class="white-text flow-text"> SALDO </span>
+                </div>
+              </a>
+            </div>
+            <div class="col s12 m6">
+              <a href="#">
+                <div class="card-panel amber accent-4 center my-card-button">
+                  <span class="white-text flow-text"> EXTRATO </span>
+                </div>
+              </a>
+            </div>
+            <!-- serviços -->
+          </div>
+          <!-- fim linha -->
         </div>
-      </div>
-      <!-- fim painel login -->
+        <!-- fim painel serviços -->
 
-      <!-- saque -->
-      <div class="row">
-        <div class="col s12">
-          <div id="painel-saque"></div>
-        </div>
-      </div>
-      <!-- saque -->
-    </div>
-    <!-- fim container -->
-
-    <!-- rodape-->
-    <footer class="page-footer amber accent-4">
-      <div class="container">
-        <div class="row">
-          <div class="col s12 center">
-            <img
-              src="assets/resources/images/logo.png"
-              id="logo-footer"
-              class="img-responsive"
-              height="120em"
-            />
+        <!-- painel login -->
+        <div id="painel-login" class="row">
+          <div class="col s12 m6 offset-m3">
+            <a href="/app/login.html">
+              <div
+                id="botao-login"
+                class="card-panel amber accent-4 center my-card-button"
+              >
+                <span class="white-text flow-text"> LOGIN </span>
+              </div>
+            </a>
           </div>
         </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="container">
-          &copy; Copyright - Todos os direitos reservados
-        </div>
-      </div>
-    </footer>
-    <!-- rodapé -->
+        <!-- fim painel login -->
 
-    <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="node_modules/jquery-mask-plugin/dist/jquery.mask.js"></script>
-    <script src="node_modules/materialize-css/dist/js/materialize.js"></script>
-    <script src="assets/resources/scripts/index.js"></script>
+        <!-- saque -->
+        <div class="row">
+          <div class="col s12">
+            <div id="painel-saque"></div>
+          </div>
+        </div>
+        <!-- saque -->
+      </div>
+      <!-- fim container -->
+    </main>
+    <!-- fim main -->
+    <div id="footer"></div>
+
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/materialize-css/dist/js/materialize.js"></script>
+    <script src="/assets/resources/scripts/shared.js"></script>
+    <script src="/assets/resources/scripts/index.js"></script>
   </body>
 </html>
