@@ -1,50 +1,65 @@
+'use strict';
+
+import {
+  DEPOSIT_TYPE,
+  TAX_BALANCE,
+  TAX_BANK_STATEMENT,
+  TAX_DEPOSIT,
+  TAX_WITHDRAW,
+  TOTAL_COSTS_KEY,
+  USERNAME_KEY,
+  WITHDRAW_TYPE,
+  formatDate,
+} from './shared.js';
+
+import { Transaction } from './domain/transaction.js';
+
 /**
 	Realiza o depósito
 */
-function depositar() {
-  const TARIFA_PERCENTAGEM = 0.01;
-  var valor = parseFloat($("#campo-deposito").val());
+function doDeposit() {
+  let value = +$('#campo-deposito').val();
 
-  if (valor < 5) {
-    $("#campo-deposito").addClass("my-invalid-input");
-    $("#msg-deposito")
-      .html("Opps!!! O valor precisa ser maior que ou igual a 5 Reais.")
+  if (value < 5) {
+    $('#campo-deposito').addClass('my-invalid-input');
+    $('#msg-deposito')
+      .html('Opps!!! O valor precisa ser maior que ou igual a 5 Reais.')
       .slideDown()
       .delay(3000)
       .slideUp();
     return false;
   }
 
-  var usuario = JSON.parse(localStorage.getItem(USERNAME_KEY));
+  const user = JSON.parse(localStorage.getItem(USERNAME_KEY));
 
   //tarifa de deposito
-  var tarifa = valor * TARIFA_PERCENTAGEM;
-  var liquido = valor - tarifa;
+  let tax = value * TAX_DEPOSIT;
+  let netValue = value - tax;
 
   //custos para visualização do saldo e extrato
-  var custos = parseFloat(localStorage.getItem(CUSTOS_KEY));
-  if (liquido < custos) {
-    custos -= liquido;
-    tarifa += liquido;
-    liquido = 0;
+  var price = parseFloat(localStorage.getItem(TOTAL_COSTS_KEY));
+  if (netValue < price) {
+    price -= netValue;
+    tax += netValue;
+    netValue = 0;
   } else {
-    liquido = liquido - custos;
-    tarifa += custos;
-    custos = 0;
+    netValue = netValue - price;
+    tax += price;
+    price = 0;
   }
 
   //persiste novamente o custo
-  localStorage.setItem(CUSTOS_KEY, custos);
+  localStorage.setItem(TOTAL_COSTS_KEY, price);
 
-  usuario.saldo += liquido;
-  var transacao = new Transacao(liquido, tarifa, DEPOSITO, new Date());
-  usuario.transacoes.push(transacao);
-  localStorage.setItem(USERNAME_KEY, JSON.stringify(usuario));
+  user.balance += netValue;
+  let transaction = new Transaction(netValue, tax, DEPOSIT_TYPE, new Date());
+  user.transactions.push(transaction);
+  localStorage.setItem(USERNAME_KEY, JSON.stringify(user));
 
-  $("#msg-deposito")
-    .removeClass("red")
-    .addClass("blue")
-    .html("Depósito efetuado com sucesso!")
+  $('#msg-deposito')
+    .removeClass('red')
+    .addClass('blue')
+    .html('Depósito efetuado com sucesso!')
     .slideDown()
     .delay(3000)
     .slideUp();
@@ -55,32 +70,31 @@ function depositar() {
 /**
 	Realiza o saque
 */
-function sacar() {
-  const TARIFA_PERCENTAGEM = 0.02;
-  var valor = parseFloat($("#campo-saque").val());
-  var usuario = JSON.parse(localStorage[USERNAME_KEY]);
+function doWithdraw() {
+  const value = parseFloat($('#campo-saque').val());
+  const user = JSON.parse(localStorage[USERNAME_KEY]);
 
-  var tarifa = valor * TARIFA_PERCENTAGEM;
-  var total = valor + tarifa;
+  let tax = value * TAX_WITHDRAW;
+  let total = value + tax;
 
-  if (total > usuario.saldo) {
-    $("#campo-saque").addClass("my-invalid-input");
-    $("#msg-saque")
-      .html("Opps!!! Saldo insuficiente!")
+  if (total > user.balance) {
+    $('#campo-saque').addClass('my-invalid-input');
+    $('#msg-saque')
+      .html('Opps!!! Saldo insuficiente!')
       .slideDown()
       .delay(3000)
       .slideUp();
     return false;
   }
 
-  var transacao = new Transacao(valor, tarifa, SAQUE, new Date());
-  usuario.transacoes.push(transacao);
-  localStorage.setItem(USERNAME_KEY, JSON.stringify(usuario));
+  const transaction = new Transaction(value, tax, WITHDRAW_TYPE, new Date());
+  user.transactions.push(transaction);
+  localStorage.setItem(USERNAME_KEY, JSON.stringify(user));
 
-  $("#msg-saque")
-    .removeClass("red")
-    .addClass("blue")
-    .html("Saque realizado com sucesso!")
+  $('#msg-saque')
+    .removeClass('red')
+    .addClass('blue')
+    .html('Saque realizado com sucesso!')
     .slideDown()
     .delay(3000)
     .slideUp();
@@ -88,42 +102,48 @@ function sacar() {
   return false;
 }
 
-function saldo() {
-  const CUSTO = 0.25;
-  var custos = parseFloat(localStorage.getItem(CUSTOS_KEY));
-  custos += custos;
-  localStorage.setItem(CUSTOS_KEY, custos);
+function doBalance() {
+  let totalCosts = parseFloat(localStorage.getItem(TOTAL_COSTS_KEY));
+  totalCosts += TAX_BALANCE;
+  localStorage.setItem(TOTAL_COSTS_KEY, totalCosts);
 
-  var usuario = JSON.parse(localStorage.getItem(USERNAME_KEY));
-  $("#mostra-saldo").html("R$ " + usuario.saldo.toFixed(2));
+  let user = JSON.parse(localStorage.getItem(USERNAME_KEY));
+  $('#mostra-saldo').html('R$ ' + user.balance.toFixed(2));
 }
 
-function mostraExtrato() {
-  const CUSTO = 0.25;
-  var custos = parseFloat(localStorage.getItem(CUSTOS_KEY));
-  custos += CUSTO;
-  localStorage.setItem(CUSTOS_KEY, custos);
+function doBankStatement() {
+  let totalCosts = parseFloat(localStorage.getItem(TOTAL_COSTS_KEY));
+  totalCosts += TAX_BANK_STATEMENT;
+  localStorage.setItem(TOTAL_COSTS_KEY, totalCosts);
 
-  var usuario = JSON.parse(localStorage.getItem(USERNAME_KEY));
-  var transacoes = usuario.transacoes;
-  var s = $("#extrato").html();
+  let user = JSON.parse(localStorage.getItem(USERNAME_KEY));
 
-  for (i in transacoes) {
-    var t = transacoes[i];
-    s +=
-      "<tr><td>" +
-      formataData(new Date(t.data)) +
-      "</td><td>" +
+  const transactions = user.transactions;
+  let text = $('#extrato').html();
+
+  for (let i in transactions) {
+    var t = transactions[i];
+    text +=
+      '<tr><td>' +
+      formatDate(new Date(t.data)) +
+      '</td><td>' +
       t.tipo +
-      "</td><td>" +
+      '</td><td>' +
       t.valor.toFixed(2) +
-      "</td><td>" +
+      '</td><td>' +
       t.tarifa.toFixed(2) +
-      "</td></tr>";
+      '</td></tr>';
   }
 
-  $("#extrato").html(s);
+  $('#extrato').html(text);
 
   //saldo
-  $("#mostra-saldo-extrato").text("R$ " + usuario.saldo.toFixed(2));
+  $('#mostra-saldo-extrato').text('R$ ' + user.balance.toFixed(2));
 }
+
+window.onload = function () {
+  document.querySelector('#form-deposit').onsubmit = (e) => {
+    e.preventDefault();
+    doDeposit();
+  };
+};

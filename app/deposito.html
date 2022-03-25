@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Login</title>
+    <title>Depósito</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="favicon.png" />
@@ -23,7 +23,7 @@
             style="display: none"
           ></div>
         </div>
-        <form class="col s12" onsubmit="return depositar()">
+        <form id="form-deposit" class="col s12">
           <div class="row">
             <div class="input-field col s12">
               <input id="campo-deposito" type="text" class="validate money" />
@@ -52,9 +52,13 @@
     <div id="footer"></div>
 
     <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
     <script src="/node_modules/materialize-css/dist/js/materialize.js"></script>
     <script src="/node_modules/alertifyjs/build/alertify.js"></script>
-    <script src="/assets/resources/scripts/shared.js"></script>
-    <script src="/assets/resources/scripts/operations.js"></script>
+    <script type="module" src="/assets/resources/scripts/shared.js"></script>
+    <script
+      type="module"
+      src="/assets/resources/scripts/operations.js"
+    ></script>
   </body>
 </html>

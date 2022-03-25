@@ -1,19 +1,16 @@
-window.onload = function () {
-  initializeUsers();
+'use strict';
 
-  const LIMIT = 10000;
-  document.getElementById("tax-span").innerText = parseInt(
-    Math.random() * LIMIT
-  );
+import { LOGGED_IN_KEY, TOTAL_COSTS_KEY, USERNAME_KEY } from './shared.js';
 
-  window.setInterval(function () {
-    let value = document.getElementById("tax-span").innerText;
-    document.getElementById("tax-span").textContent = (
-      parseInt(value) +
-      Math.random() * 100
-    ).toFixed(2);
-  }, 3000);
-};
+import { formatDate as fd } from './shared.js';
+
+/**
+ * Retorna o ano corrente com quatro dígitos.
+ * @returns
+ */
+function formatDate() {
+  return new Date().getFullYear();
+}
 
 /**
 	Cadastra um usuário default para funcionamento do login.
@@ -24,41 +21,44 @@ function initializeUsers() {
     return false;
   }
 
+  //usuário definido na forma literal
   var user = {
-    nome: USERNAME_KEY,
-    senha: "qwerty",
-    saldo: 0,
-    transacoes: [],
+    username: USERNAME_KEY,
+    password: 'qwerty',
+    balance: 0,
+    transactions: [],
   };
+
   localStorage.setItem(USERNAME_KEY, JSON.stringify(user));
-  localStorage.setItem(CUSTOS_KEY, 0);
+  localStorage.setItem(TOTAL_COSTS_KEY, 0);
   localStorage.setItem(LOGGED_IN_KEY, false);
 }
 
+/**
+ * Apresenta ou esconde o painel de operações de acordo com o estado de login.
+ */
 function showOperations() {
   var isLoggedIn = localStorage.getItem(LOGGED_IN_KEY);
 
-  if (isLoggedIn == "true") {
-    $("#painel-login").hide();
-    $("#painel-servicos").fadeIn();
+  if (isLoggedIn === 'true') {
+    $('#painel-login').hide();
+    $('#painel-servicos').fadeIn();
   }
 }
 
-//welcome();
-
-//diálogos
+//diálogos de boas vindas
 function welcome() {
   window.alert(
-    "Seja bem-vindo ao Roubank! Venha pagar mais taxas para a gente!"
+    'Seja bem-vindo ao Roubank! Venha pagar mais taxas para a gente!'
   );
   alert(
-    "Vamos ver se está com sorte hoje. Clique em Ok e responda a pergunta mágica!"
+    'Vamos ver se está com sorte hoje. Clique em Ok e responda a pergunta mágica!'
   );
 
-  let date = prompt("Hoje é o seu dia de sorte! Qual dia é hoje?");
+  let date = prompt('Hoje é o seu dia de sorte! Qual dia é hoje?');
 
   let response = confirm(
-    "Hoje é o dia do seu aniversário? Clique Ok para Sim e Cancelar para Não."
+    'Hoje é o dia do seu aniversário? Clique Ok para Sim e Cancelar para Não.'
   );
 
   if (response) {
@@ -68,7 +68,32 @@ function welcome() {
     );
   } else {
     alert(
-      "Não é seu aniversário, mas não tem problema, entre que mesmo assim te daremos um lindo presente por meio de taxas para pagar!"
+      'Não é seu aniversário, mas não tem problema, entre que mesmo assim te daremos um lindo presente por meio de taxas para pagar!'
     );
   }
 }
+
+/**
+ * Inicializa a aplicação com o cadastro de um usuário padrão e
+ * também com a apresentação de alguns dados.
+ */
+window.onload = function () {
+  showOperations();
+  initializeUsers();
+  //welcome();
+
+  const LIMIT = 10000;
+  document.getElementById('tax-span').innerText = parseInt(
+    Math.random() * LIMIT
+  );
+
+  window.setInterval(function () {
+    let value = document.getElementById('tax-span').innerText;
+    document.getElementById('tax-span').textContent = (
+      parseInt(value) +
+      Math.random() * 100
+    ).toFixed(2);
+  }, 3000);
+
+  document.querySelector('#year').textContent = formatDate();
+};
