@@ -18,7 +18,7 @@
       <div class="row">
         <div class="col s12">
           <div
-            id="msg-deposito"
+            id="div-deposit-message"
             class="card-panel red white-text"
             style="display: none"
           ></div>
@@ -26,15 +26,14 @@
         <form id="form-deposit" class="col s12">
           <div class="row">
             <div class="input-field col s12">
-              <input id="campo-deposito" type="text" class="validate money" />
-              <label for="campo-deposito">Valor de depósito</label>
+              <input id="input-deposit" type="text" class="validate money" />
+              <label for="input-deposit">Valor de depósito</label>
             </div>
           </div>
           <button
             class="btn waves-effect waves-light amber darken-4"
             type="submit"
             name="action"
-            id="botao-enviar-deposito"
           >
             Depositar
             <i class="material-icons right">send</i>
@@ -42,9 +41,9 @@
         </form>
       </div>
       <!-- link home -->
-      <div id="painel-login" class="row">
+      <div class="row">
         <div class="col s12 m6 offset-m3 center">
-          <a href="/index.html"> VOLTAR AO MENU PRINCIPAL </a>
+          <a href="../index.html"> VOLTAR AO MENU PRINCIPAL </a>
         </div>
       </div>
       <!-- link home -->
@@ -55,10 +54,7 @@
     <script src="/node_modules/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
     <script src="/node_modules/materialize-css/dist/js/materialize.js"></script>
     <script src="/node_modules/alertifyjs/build/alertify.js"></script>
-    <script type="module" src="/assets/resources/scripts/shared.js"></script>
-    <script
-      type="module"
-      src="/assets/resources/scripts/operations.js"
-    ></script>
+
+    <script type="module" src="/assets/resources/scripts/deposit.js"></script>
   </body>
 </html>

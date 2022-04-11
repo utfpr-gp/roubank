@@ -2,16 +2,6 @@
 
 import { LOGGED_IN_KEY, TOTAL_COSTS_KEY, USERNAME_KEY } from './shared.js';
 
-import { formatDate as fd } from './shared.js';
-
-/**
- * Retorna o ano corrente com quatro dígitos.
- * @returns
- */
-function formatDate() {
-  return new Date().getFullYear();
-}
-
 /**
 	Cadastra um usuário default para funcionamento do login.
 	Só realiza o cadastro caso o usuário ainda não esteja salvo no WebStorage.
@@ -94,6 +84,4 @@ window.onload = function () {
       Math.random() * 100
     ).toFixed(2);
   }, 3000);
-
-  document.querySelector('#year').textContent = formatDate();
 };
