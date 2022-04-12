@@ -1,6 +1,6 @@
 'use strict';
 
-import { LOGGED_IN_KEY, USERNAME_KEY } from './shared.js';
+import { LOGGED_IN_KEY, USERNAME_KEY } from '../../util/shared.js';
 
 window.onload = function () {
   //trata o login

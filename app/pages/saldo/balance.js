@@ -1,6 +1,10 @@
 'use strict';
 
-import { TAX_BALANCE, TOTAL_COSTS_KEY, USERNAME_KEY } from './shared.js';
+import {
+  TAX_BALANCE,
+  TOTAL_COSTS_KEY,
+  USERNAME_KEY,
+} from '../../util/shared.js';
 
 function doBalance() {
   let totalCosts = parseFloat(localStorage.getItem(TOTAL_COSTS_KEY));

@@ -1,8 +1,12 @@
 'use strict';
 
-import { TAX_WITHDRAW, USERNAME_KEY, WITHDRAW_TYPE } from './shared.js';
+import {
+  TAX_WITHDRAW,
+  USERNAME_KEY,
+  WITHDRAW_TYPE,
+} from '../../util/shared.js';
 
-import { Transaction } from './domain/transaction.js';
+import { Transaction } from '../../model/transaction.js';
 
 /**
 	Realiza o saque

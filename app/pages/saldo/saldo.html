@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Extrato</title>
+    <title>Saldo</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="favicon.png" />
@@ -11,36 +11,24 @@
   <body>
     <div id="menu"></div>
     <div class="container contact">
-      <h5>Extrato</h5>
+      <h5>Saldo</h5>
       <h6>
         Cobramos uma taxa de apenas 25 centavos para apresentação do extrato a
         ser debitado só no seu próximo depósito
       </h6>
       <hr />
       <div class="row">
-        <div class="col s12 m6 offset-m3">
-          <table>
-            <thead>
-              <tr>
-                <th data-field="td-date">Data</th>
-                <th data-field="td-type">Lançamentos</th>
-                <th data-field="td-value">Valor</th>
-                <th data-field="td-tax">Tarifa</th>
-              </tr>
-            </thead>
-
-            <tbody id="table-statement"></tbody>
-          </table>
-
-          <div id="div-balance" class="col s12 amber white-text my-balance">
-            R$ 0,00
-          </div>
+        <div
+          id="balance-panel"
+          class="col s12 m6 offset-m3 card-panel amber white-text my-balance"
+        >
+          R$ 0,00
         </div>
       </div>
       <!-- link home -->
       <div class="row">
         <div class="col s12 m6 offset-m3 center">
-          <a href="../index.html"> VOLTAR AO MENU PRINCIPAL </a>
+          <a href="/index.html"> VOLTAR AO MENU PRINCIPAL </a>
         </div>
       </div>
       <!-- link home -->
@@ -50,9 +38,6 @@
     <script src="/node_modules/jquery/dist/jquery.js"></script>
     <script src="/node_modules/materialize-css/dist/js/materialize.js"></script>
     <script src="/node_modules/alertifyjs/build/alertify.js"></script>
-    <script
-      type="module"
-      src="/assets/resources/scripts/bank-statement.js"
-    ></script>
+    <script type="module" src="balance.js"></script>
   </body>
 </html>
