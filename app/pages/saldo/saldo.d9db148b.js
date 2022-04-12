@@ -1,0 +1,2 @@
+$((function(){let e=localStorage.getItem("eh_logado")?"/menu.html":"/menu-anonimo.html";$("#menu").load(e),$("#footer").load("/footer.html"),setTimeout((function(){$(".sidenav").sidenav(),document.querySelector("#year").textContent=(new Date).getFullYear()}),1e3)})),window.onload=function(){!function(){let e=parseFloat(localStorage.getItem("custos"));e+=.25,localStorage.setItem("custos",e);let t=JSON.parse(localStorage.getItem("tomaz.leite"));$("#balance-panel").html("R$ "+t.balance.toFixed(2))}()};
+//# sourceMappingURL=saldo.d9db148b.js.map
