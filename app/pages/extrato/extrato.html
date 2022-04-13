@@ -4,52 +4,61 @@
     <title>Extrato</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="stylesheet" href="/assets/resources/styles/style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <script type="module">
+      import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+      const el = document.createElement('pwa-update');
+      document.body.appendChild(el);
+    </script>
   </head>
 
   <body>
     <div id="menu"></div>
-    <div class="container contact">
-      <h5>Extrato</h5>
-      <h6>
-        Cobramos uma taxa de apenas 25 centavos para apresentação do extrato a
-        ser debitado só no seu próximo depósito
-      </h6>
-      <hr />
-      <div class="row">
-        <div class="col s12 m6 offset-m3">
-          <table>
-            <thead>
-              <tr>
-                <th data-field="td-date">Data</th>
-                <th data-field="td-type">Lançamentos</th>
-                <th data-field="td-value">Valor</th>
-                <th data-field="td-tax">Tarifa</th>
-              </tr>
-            </thead>
+    <main>
+      <div class="container contact">
+        <h5>Extrato</h5>
+        <h6>
+          Cobramos uma taxa de apenas 25 centavos para apresentação do extrato a
+          ser debitado só no seu próximo depósito
+        </h6>
+        <hr />
+        <div class="row">
+          <div class="col s12 m6 offset-m3">
+            <table>
+              <thead>
+                <tr>
+                  <th data-field="td-date">Data</th>
+                  <th data-field="td-type">Lançamentos</th>
+                  <th data-field="td-value">Valor</th>
+                  <th data-field="td-tax">Tarifa</th>
+                </tr>
+              </thead>
 
-            <tbody id="table-statement"></tbody>
-          </table>
+              <tbody id="table-statement"></tbody>
+            </table>
 
-          <div id="div-balance" class="col s12 amber white-text my-balance">
-            R$ 0,00
+            <div id="div-balance" class="col s12 amber white-text my-balance">
+              R$ 0,00
+            </div>
           </div>
         </div>
-      </div>
-      <!-- link home -->
-      <div class="row">
-        <div class="col s12 m6 offset-m3 center">
-          <a href="/index.html"> VOLTAR AO MENU PRINCIPAL </a>
+        <!-- link home -->
+        <div class="row">
+          <div class="col s12 m6 offset-m3 center">
+            <a href="/index.html"> VOLTAR AO MENU PRINCIPAL </a>
+          </div>
         </div>
+        <!-- link home -->
       </div>
-      <!-- link home -->
-    </div>
-    <div id="footer"></div>
+    </main>
+    <footer id="footer"></footer>
 
-    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script type="module" src="/node_modules/jquery/dist/jquery.js"></script>
     <script src="/node_modules/materialize-css/dist/js/materialize.js"></script>
     <script src="/node_modules/alertifyjs/build/alertify.js"></script>
+    <script type="module" src="/app/layout/layout.js"></script>
     <script type="module" src="bank-statement.js"></script>
   </body>
 </html>

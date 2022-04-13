@@ -1,0 +1,18 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "utfpr-gp.github",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "utfpr-gp.github",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "images/266x265.png",
+      "type": "image/png",
+      "sizes": "266x265"
+    }
+  ]
+}

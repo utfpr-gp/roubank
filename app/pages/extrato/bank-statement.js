@@ -5,7 +5,7 @@ import {
   TOTAL_COSTS_KEY,
   USERNAME_KEY,
   formatFullDate,
-} from '../../util/shared.js';
+} from '/app/util/shared.js';
 
 function doBankStatement() {
   let totalCosts = parseFloat(localStorage.getItem(TOTAL_COSTS_KEY));

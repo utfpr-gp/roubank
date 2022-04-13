@@ -1,6 +1,6 @@
-@import url("http://fonts.googleapis.com/icon?family=Material+Icons");
-@import url("/node_modules/materialize-css/dist/css/materialize.css");
-@import url("/node_modules/alertifyjs/build/css/alertify.css");
+@import url('/assets/resources/styles/font.css');
+@import url('/node_modules/materialize-css/dist/css/materialize.css');
+@import url('/node_modules/alertifyjs/build/css/alertify.css');
 
 body,
 html {
@@ -19,14 +19,14 @@ hr {
 }
 
 @font-face {
-  font-family: "airborne";
-  src: url("../fonts/airborne.ttf") format("truetype");
+  font-family: 'airborne';
+  src: url('../fonts/airborne.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 .my-logo-text {
-  font-family: "airborne";
+  font-family: 'airborne';
 }
 
 .my-logo {
@@ -146,7 +146,7 @@ main {
   padding-top: 13%;
   padding-bottom: 13%;
   margin-bottom: 50px;
-  background-image: url("../images/tarifas.jpg");
+  background-image: url('../images/tarifas.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -215,6 +215,6 @@ footer {
 .my-balance {
   padding: 20px 0px !important;
   font-size: 3em;
-  font-family: "airborne";
+  font-family: 'airborne';
   text-align: center;
 }

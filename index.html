@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="stylesheet" href="/assets/resources/styles/style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <script type="module">
+      import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+      const el = document.createElement('pwa-update');
+      document.body.appendChild(el);
+    </script>
   </head>
 
   <body>
@@ -91,10 +97,14 @@
       <!-- fim container -->
     </main>
     <!-- fim main -->
-    <div id="footer"></div>
+    <footer id="footer"></footer>
 
-    <script src="/node_modules/jquery/dist/jquery.js"></script>
-    <script src="/node_modules/materialize-css/dist/js/materialize.js"></script>
+    <script type="module" src="/node_modules/jquery/dist/jquery.js"></script>
+    <script
+      type="module"
+      src="/node_modules/materialize-css/dist/js/materialize.js"
+    ></script>
+    <script type="module" src="/app/layout/layout.js"></script>
     <script type="module" src="/app/pages/index.js"></script>
   </body>
 </html>

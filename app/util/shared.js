@@ -16,7 +16,7 @@ export const TAX_BANK_STATEMENT = 0.25;
  * Retorna o ano corrente com quatro dígitos.
  * @returns
  */
-function currentYear() {
+export function currentYear() {
   return new Date().getFullYear();
 }
 
@@ -33,22 +33,5 @@ export function formatFullDate(d) {
     formatZero(d.getFullYear())
   );
 }
-
-/**
- * Configurações da tela realizadas no carregamento da aplicação
- * de acordo com o estado de login do usuário.
- */
-$(function () {
-  let isLoggedIn = localStorage.getItem(LOGGED_IN_KEY);
-
-  let menu = isLoggedIn ? '/menu.html' : '/menu-anonimo.html';
-  $('#menu').load(menu);
-  $('#footer').load('/footer.html');
-
-  setTimeout(function () {
-    $('.sidenav').sidenav();
-    document.querySelector('#year').textContent = currentYear();
-  }, 1000);
-});
 
 export { USERNAME_KEY, COSTS_KEY as TOTAL_COSTS_KEY, LOGGED_IN_KEY };

@@ -4,57 +4,68 @@
     <title>Saque</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="stylesheet" href="/assets/resources/styles/style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <script type="module">
+      import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+      const el = document.createElement('pwa-update');
+      document.body.appendChild(el);
+    </script>
   </head>
 
   <body>
     <div id="menu"></div>
-    <div class="container contact">
-      <h5>Saque</h5>
-      <h6>Cobramos uma taxa de 2% sobre o valor do saque</h6>
-      <hr />
-      <div class="row">
-        <div class="col s12">
-          <div
-            id="msg-withdraw"
-            class="card-panel red white-text"
-            style="display: none"
-          ></div>
-        </div>
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="input-withdraw" type="text" class="validate money" />
-              <label for="input-withdraw">Valor de Saque</label>
-            </div>
+    <main>
+      <div class="container contact">
+        <h5>Saque</h5>
+        <h6>Cobramos uma taxa de 2% sobre o valor do saque</h6>
+        <hr />
+        <div class="row">
+          <div class="col s12">
+            <div
+              id="msg-withdraw"
+              class="card-panel red white-text"
+              style="display: none"
+            ></div>
           </div>
-          <button
-            class="btn waves-effect waves-light amber darken-4"
-            type="submit"
-            name="action"
-            id="button-withdraw"
-          >
-            Saque
-            <i class="material-icons right">send</i>
-          </button>
-        </form>
-      </div>
-      <!-- link home -->
-      <div class="row">
-        <div class="col s12 m6 offset-m3 center">
-          <a href="/index.html"> VOLTAR AO MENU PRINCIPAL </a>
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="input-withdraw" type="text" class="validate money" />
+                <label for="input-withdraw">Valor de Saque</label>
+              </div>
+            </div>
+            <button
+              class="btn waves-effect waves-light amber darken-4"
+              type="submit"
+              name="action"
+              id="button-withdraw"
+            >
+              Saque
+              <i class="material-icons right">send</i>
+            </button>
+          </form>
         </div>
+        <!-- link home -->
+        <div class="row">
+          <div class="col s12 m6 offset-m3 center">
+            <a href="/index.html"> VOLTAR AO MENU PRINCIPAL </a>
+          </div>
+        </div>
+        <!-- link home -->
       </div>
-      <!-- link home -->
-    </div>
+    </main>
+    <footer id="footer"></footer>
 
-    <div id="footer"></div>
-
-    <script src="/node_modules/jquery/dist/jquery.js"></script>
-    <script src="/node_modules/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+    <script type="module" src="/node_modules/jquery/dist/jquery.js"></script>
+    <script
+      type="module"
+      src="/node_modules/jquery-mask-plugin/dist/jquery.mask.min.js"
+    ></script>
     <script src="/node_modules/materialize-css/dist/js/materialize.js"></script>
     <script src="/node_modules/alertifyjs/build/alertify.js"></script>
+    <script type="module" src="/app/layout/layout.js"></script>
     <script type="module" src="withdraw.js"></script>
   </body>
 </html>

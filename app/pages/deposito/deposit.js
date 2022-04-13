@@ -5,9 +5,9 @@ import {
   TAX_DEPOSIT,
   TOTAL_COSTS_KEY,
   USERNAME_KEY,
-} from '../../util/shared.js';
+} from '/app/util/shared.js';
 
-import { Transaction } from '../../model/transaction.js';
+import { Transaction } from '/app/model/transaction.js';
 
 /**
 	Realiza o depósito

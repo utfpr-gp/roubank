@@ -4,7 +4,7 @@ import {
   LOGGED_IN_KEY,
   TOTAL_COSTS_KEY,
   USERNAME_KEY,
-} from '../util/shared.js';
+} from '/app/util/shared.js';
 
 /**
 	Cadastra um usuário default para funcionamento do login.
