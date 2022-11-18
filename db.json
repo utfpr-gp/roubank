@@ -1,0 +1,144 @@
+{
+  "users": [
+    {
+      "id": "10",
+      "username": "tomaz.leite",
+      "password": "qwerty",
+      "balance": 947.7900000000001,
+      "isAdmin": true
+    },
+    {
+      "username": "tomaz.leite2",
+      "password": "qwerty",
+      "balance": 100,
+      "isAdmin": false,
+      "id": "AgqJ9Sx"
+    }
+  ],
+  "transactions": [
+    {
+      "value": 31,
+      "tax": 2.09,
+      "type": "deposit",
+      "id": 490,
+      "date": "2022-05-21T00:12:50.798Z",
+      "userId": "10"
+    },
+    {
+      "value": 31.23,
+      "tax": 2.09,
+      "type": "deposit",
+      "id": 390,
+      "date": "2022-05-21T00:12:50.798Z",
+      "userId": "10"
+    },
+    {
+      "value": 32.67,
+      "tax": 0.33,
+      "type": "deposit",
+      "id": 993,
+      "date": "2022-05-23T03:49:03.776Z",
+      "userId": "10"
+    },
+    {
+      "value": 5.94,
+      "tax": 0.06,
+      "type": "deposit",
+      "id": 173,
+      "date": "2022-05-25T15:58:56.380Z",
+      "userId": "10"
+    },
+    {
+      "value": 6.43,
+      "tax": 0.5700000000000001,
+      "type": "deposit",
+      "id": 723,
+      "date": "2022-05-25T15:59:14.564Z",
+      "userId": "10"
+    },
+    {
+      "value": 5.94,
+      "tax": 0.06,
+      "type": "deposit",
+      "id": 441,
+      "date": "2022-05-25T16:00:55.651Z",
+      "userId": "10"
+    },
+    {
+      "value": 98,
+      "tax": 2,
+      "type": "deposit",
+      "id": 147,
+      "date": "2022-06-02T20:07:21.819Z",
+      "userId": "10"
+    },
+    {
+      "value": 12,
+      "tax": 0.24,
+      "type": "withdraw",
+      "id": 172,
+      "date": "2022-06-02T21:12:36.169Z"
+    }
+  ],
+  "donations": [
+    {
+      "id": 1,
+      "value": 10,
+      "userId": "10"
+    }
+  ],
+  "states": [
+    {
+      "id": 1,
+      "name": "Paraná",
+      "abbreviation": "PR"
+    },
+    {
+      "id": 2,
+      "name": "Santa Catarina",
+      "abbreviation": "SC"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Guarapuava",
+      "state": {
+        "id": 1,
+        "name": "Paraná",
+        "abbreviation": "PR"
+      },
+      "id": 1,
+      "imagePath": "https://picsum.photos/200/300"
+    },
+    {
+      "name": "Porto União",
+      "state": {
+        "id": 2,
+        "name": "Santa Catarina",
+        "abbreviation": "SC"
+      },
+      "imagePath": "dsfs",
+      "id": 2
+    }
+  ],
+  "contacts": [
+    {
+      "name": "Roni ",
+      "email": "roni@gmail.com",
+      "message": "dsfdsfdsf",
+      "id": 4
+    },
+    {
+      "name": "Fabio",
+      "email": "fabio@gmaill.com",
+      "message": "sdfsdf",
+      "id": 5
+    },
+    {
+      "name": "Samuel",
+      "email": "samuel@gmail.com",
+      "message": "dfsdfkjoksddsf",
+      "id": 7
+    }
+  ]
+}
